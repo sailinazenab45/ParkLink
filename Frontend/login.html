@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParkLink Login</title>
+
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>PARKLINK</h1>
+
+        <input
+            type="text"
+            id="username"
+            placeholder="Username"
+        >
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Email ID"
+        >
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Password"
+        >
+
+        <button onclick="registerUser()">
+            Create Account
+        </button>
+
+        <button onclick="loginUser()">
+            Login
+        </button>
+
+        <p id="message"></p>
+
+    </div>
+
+    <script src="login.js"></script>
+
+<div id="vehicleModal" class="modal">
+
+    <div class="modal-content">
+
+        <h2>Vehicle Information</h2>
+
+        <input
+            type="text"
+            id="slot"
+            placeholder="Parking Slot"
+        >
+
+        <input
+            type="text"
+            id="vehicleNumber"
+            placeholder="Vehicle Number"
+        >
+
+        <select id="vehicleType">
+
+            <option value="">
+                Select Vehicle Type
+            </option>
+
+            <option value="2 Wheeler">
+                2 Wheeler
+            </option>
+
+            <option value="4 Wheeler">
+                4 Wheeler
+            </option>
+
+        </select>
+
+        <input
+            type="text"
+            id="vehicleModel"
+            placeholder="Vehicle Model"
+        >
+
+        <select id="fuelType">
+
+            <option value="">
+                Select Fuel Type
+            </option>
+
+            <option value="Petrol">
+                Petrol
+            </option>
+
+            <option value="EV">
+                EV
+            </option>
+
+        </select>
+
+        <button onclick="saveVehicleInfo()">
+            Save Vehicle Information
+        </button>
+
+    </div>
+
+</div>
+
+</body>
+</html>
