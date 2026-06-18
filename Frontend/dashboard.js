@@ -1,3 +1,4 @@
+const API_URL = "https://parklink-ba31.onrender.com/api/auth";
 const email =
 localStorage.getItem("userEmail");
 
