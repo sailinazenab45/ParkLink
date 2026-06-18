@@ -11,6 +11,8 @@ const transporter = nodemailer.createTransport({
     }
 });
 
+console.log("SMTP CONFIG LOADED - PORT 587");
+
 const router = express.Router();
 
 router.post('/complaint', async (req, res) => {
