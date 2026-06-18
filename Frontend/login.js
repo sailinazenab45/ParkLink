@@ -1,4 +1,4 @@
-const API_URL = "https://parklink-ba31.onrender.com";
+const API_URL = "https://parklink-ba31.onrender.com/api/auth";
 
 async function registerUser() {
 
