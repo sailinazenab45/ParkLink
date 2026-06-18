@@ -3,8 +3,8 @@ const User = require('../models/User');
 const nodemailer = require('nodemailer');
 const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
-    port: 587,
-    secure: false,
+    port: 465,
+    secure: true,
     family: 4,
     auth: {
         user: process.env.EMAIL_USER,
@@ -15,7 +15,7 @@ require("dns").lookup("smtp.gmail.com", (err, address, family) => {
     console.log("SMTP DNS:", address, "IPv" + family);
 });
 
-console.log("SMTP CONFIG LOADED - PORT 587");
+console.log("SMTP CONFIG LOADED - PORT 465");
 
 const router = express.Router();
 
