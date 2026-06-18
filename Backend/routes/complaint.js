@@ -17,24 +17,21 @@ router.post('/complaint', async (req, res) => {
 
         const { email } = req.body;
 
-        const user = await User.findOne({ email });
+       const user = await User.findOne({ email });
 
-        if (user.complaintRaised) {
+if (!user) {
+    return res.status(404).json({
+        success: false,
+        message: "User not found"
+    });
+}
 
+if (user.complaintRaised) {
     return res.json({
         success: false,
         message: "Your Complaint Email is already sent to the admin. We'll try to resolve as soon as possible."
     });
-
-}
-
-        if (!user) {
-            return res.status(404).json({
-                success: false,
-                message: 'User not found'
-            });
-        }
-
+} 
         const mailOptions = {
     from: process.env.EMAIL_USER,
     to: 'shellshellyshe@gmail.com',
@@ -54,7 +51,11 @@ Kindly resolve.
 `
 };
 
+console.log("Sending email...");
+
 await transporter.sendMail(mailOptions);
+
+console.log("Email sent successfully");
 
 user.complaintRaised = true;
 await user.save();
