@@ -5,11 +5,14 @@ const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     port: 465,
     secure: true,
-    family: 4,
+    
     auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS
-    }
+    },
+     family: 4
+     
+
 });
 require("dns").lookup("smtp.gmail.com", (err, address, family) => {
     console.log("SMTP DNS:", address, "IPv" + family);
