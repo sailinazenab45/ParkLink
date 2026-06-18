@@ -11,6 +11,9 @@ const transporter = nodemailer.createTransport({
         pass: process.env.EMAIL_PASS
     }
 });
+require("dns").lookup("smtp.gmail.com", (err, address, family) => {
+    console.log("SMTP DNS:", address, "IPv" + family);
+});
 
 console.log("SMTP CONFIG LOADED - PORT 587");
 
