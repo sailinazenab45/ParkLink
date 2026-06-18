@@ -4,8 +4,8 @@ localStorage.getItem("userEmail");
 async function loadProfile(){
 
     const response = await fetch(
-        `http://localhost:5000/api/auth/profile/${email}`
-    );
+    `${API_URL}/profile/${email}`
+);
 
     const data =
     await response.json();
@@ -29,7 +29,7 @@ loadProfile();
 async function sendComplaint(){
 
     const response = await fetch(
-        "http://localhost:5000/api/complaint",
+        "https://parklink-ba31.onrender.com/api/complaint",
         {
             method:"POST",
             headers:{

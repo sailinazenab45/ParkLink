@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api/auth";
+const API_URL = "https://parklink-ba31.onrender.com";
 
 async function registerUser() {
 
@@ -107,7 +107,7 @@ async function saveVehicleInfo() {
         document.getElementById("fuelType").value;
 
     const response = await fetch(
-        "http://localhost:5000/api/auth/vehicle-info",
+        `${API_URL}/vehicle-info`,
         {
             method: "POST",
             headers: {
